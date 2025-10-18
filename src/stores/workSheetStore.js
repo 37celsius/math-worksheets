@@ -1,12 +1,15 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-import { PROBLEM_TYPE, NUMBER_OF_PROBLEMS } from '@/constants'
+import { createCounterActions } from '@/utils/counter'
+
+import { PROBLEM_TYPE, NUMBER_OF_PROBLEMS, MAX_NUMBER } from '@/constants'
 
 export const useWorksheetStore = defineStore('worksheet', () => {
   // STATE
   const selectedOperation = ref(PROBLEM_TYPE.ADDITION)
   const defaultNumberOfProblems = ref(NUMBER_OF_PROBLEMS)
+  const maxNumber = ref(MAX_NUMBER)
   const problems = ref([])
 
   // GETTER
@@ -24,15 +27,11 @@ export const useWorksheetStore = defineStore('worksheet', () => {
   })
 
   // ACTIONS
-  const incrementNumberOfProblems = () => {
-    return defaultNumberOfProblems.value++
-  }
+  const { increment: incrementNumberOfProblems, decrement: decrementNumberOfProblems } =
+    createCounterActions(defaultNumberOfProblems)
 
-  const decrementNumberOfProblems = () => {
-    if (defaultNumberOfProblems.value > 0) {
-      return defaultNumberOfProblems.value--
-    }
-  }
+  const { increment: incrementMaxNumber, decrement: decrementMaxNumber } =
+    createCounterActions(maxNumber)
 
   // The store must return everything it wants to expose
   // We do not need ref for PROBLEM_TYPE since it's constants
@@ -41,8 +40,11 @@ export const useWorksheetStore = defineStore('worksheet', () => {
     problems,
     worksheetTitle,
     defaultNumberOfProblems,
+    maxNumber,
     incrementNumberOfProblems,
+    incrementMaxNumber,
     decrementNumberOfProblems,
+    decrementMaxNumber,
     PROBLEM_TYPE,
   }
 })

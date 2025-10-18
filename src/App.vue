@@ -5,7 +5,7 @@ import { useWorksheetStore } from '@/stores/workSheetStore'
 // Initialize the store
 const store = useWorksheetStore()
 
-const { worksheetTitle, selectedOperation, defaultNumberOfProblems } = storeToRefs(store)
+const { worksheetTitle, selectedOperation, defaultNumberOfProblems, maxNumber } = storeToRefs(store)
 /*
 ** NOTE
 Using v-model in select set the default.
@@ -35,6 +35,12 @@ selection and setting the dropdown's initial state from your data, all in one st
       {{ defaultNumberOfProblems }}
       <button @click="store.incrementNumberOfProblems">up</button>
       <button @click="store.decrementNumberOfProblems">down</button>
+    </div>
+
+    <div>
+      Max number: {{ maxNumber }}
+      <button @click="store.incrementMaxNumber">up</button>
+      <button @click="store.decrementMaxNumber">down</button>
     </div>
   </div>
   {{ worksheetTitle }}

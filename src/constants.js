@@ -4,3 +4,4 @@ export const PROBLEM_TYPE = {
 }
 
 export const NUMBER_OF_PROBLEMS = 10
+export const MAX_NUMBER = 20
