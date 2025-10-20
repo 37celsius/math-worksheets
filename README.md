@@ -10,3 +10,11 @@
 - [ ] record progress
 - [ ] add test
 - [ ] update readme
+
+### FUTURE IMPLEMENTATION
+
+- Able to do it online
+- Provide timer
+- Save result / profile
+- Provide rank based on time
+- Create game that compete with other user

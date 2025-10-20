@@ -1,0 +1,56 @@
+:root {
+  --cherise-red-700: #b91745;
+  --deep-cove-900: #05021c;
+
+  --grey-400: #c9c9c9;
+  --grey-500: #8c8c8c;
+  --grey-600: #575757;
+
+  --black: #000000;
+  --white: #ffffff;
+
+  --yellow-900: #ffc914;
+
+  --base-spacing: 0.2rem;
+
+  --index-base: 0;
+  --index-middle: 5;
+  --index-top: 10;
+
+  --text-dark-00: var(--deep-cove-900);
+  --text-light-00: var(--white);
+
+  --border-radius-small: 2px;
+  --border-radius-regular: 4px;
+  --border-radius-medium: 6px;
+
+  --max-width: 1400px;
+
+  --font-quicksand: 'Quicksand', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--text-dark-00);
+  font-family: var(--font-quicksand);
+  font-size: 1.6rem;
+  font-weight: 500;
+  height: 100%;
+}
+

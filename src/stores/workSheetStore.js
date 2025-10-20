@@ -44,13 +44,18 @@ export const useWorksheetStore = defineStore('worksheet', () => {
   }
 
   const generateProblems = () => {
+    // Reset the problems
+    // Create new set for comparison
     problems.value = []
     const existingProblems = new Set()
 
+    // Create problems for how many the user wants
     for (let i = 0; i < defaultNumberOfProblems.value; i++) {
+      // Create placeholder and random number function
       let num1, num2
       const getRandomNumber = (max) => Math.floor(Math.random() * max) + 1
 
+      // Check if problem already exist or not
       while (true) {
         const number1 = getRandomNumber(maxNumber.value)
         const number2 = getRandomNumber(maxNumber.value)
@@ -61,11 +66,11 @@ export const useWorksheetStore = defineStore('worksheet', () => {
 
         if (!existingProblems.has(key)) {
           existingProblems.add(key)
-
           break
         }
       }
 
+      // Add to problems depending on the type
       if (selectedOperation.value === PROBLEM_TYPE.ADDITION) {
         problems.value.push({ num1, num2, operator: '+', result: num1 + num2, isCorrect: false })
       } else if (selectedOperation.value === PROBLEM_TYPE.SUBTRACTION) {

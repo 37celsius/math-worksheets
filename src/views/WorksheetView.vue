@@ -8,7 +8,6 @@
 
   // Initialize the store
   const store = useWorksheetStore()
-
   const { problems } = storeToRefs(store)
 
 </script>
@@ -17,7 +16,7 @@
   <AppHeader title="Math worksheet"/>
   <main>
     <WorksheetSetting />
-      <ListOfProblems v-if="problems.length > 0" />
+    <ListOfProblems v-if="problems.length > 0" />
   </main>
   <AppFooter />
 </template>
