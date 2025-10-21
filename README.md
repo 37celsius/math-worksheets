@@ -13,6 +13,7 @@
 
 ### FUTURE IMPLEMENTATION
 
+- Gives warning if the problem set can't be implement if the highest number is too low, eg 40 problem set and 10 highest number
 - Able to do it online
 - Provide timer
 - Save result / profile
