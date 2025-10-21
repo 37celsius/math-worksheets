@@ -1,9 +1,16 @@
 :root {
   --cherise-red-700: #b91745;
+  --bluemine-900: #184862;
   --deep-cove-900: #05021c;
+  --pigeon-post-100: #f7fbfc;
+  --emerald-400: #32de8a;
+  --emerald-950: #042f1c;
+  --picton-blue-400: #2EC0F9;
+  --picton-blue-900: #0b4d6f;
 
   --grey-400: #c9c9c9;
   --grey-500: #8c8c8c;
+  --grey-550: #858585;
   --grey-600: #575757;
 
   --black: #000000;
@@ -24,25 +31,15 @@
   --border-radius-regular: 4px;
   --border-radius-medium: 6px;
 
-  --max-width: 1400px;
+  --max-width: 1374px;
+  --responsive-medium: 768px;
+  --responsive-regular: 1142px;
 
   --font-quicksand: 'Quicksand', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 html {
   font-size: 62.5%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
@@ -51,6 +48,76 @@ body {
   font-family: var(--font-quicksand);
   font-size: 1.6rem;
   font-weight: 500;
-  height: 100%;
 }
 
+select,
+::picker(select) {
+    appearance: base-select;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.wrapper-window {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+  min-height: 100vh;
+  padding-top: 1rem;
+  width: 98%;
+}
+
+.wrapper-main {
+  flex: 1;
+}
+
+.wrapper-content {
+  padding-bottom: 1.2rem;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+  padding-top: 1.2rem;
+  width: 100%;
+}
+
+.button {
+  align-items: center;
+  display: flex;
+  border: 0rem;
+  border-radius: var(--border-radius-small);
+  font-weight: 700;
+  height: 4.2rem;
+  margin: 0rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 0.2rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button {
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: var(--picton-blue-400);
+    color: var(--picton-blue-900);
+  }
+}
+
+@media only screen and (min-width: 1142px ) {
+  .wrapper-window {
+    padding-top: 4rem;
+  }
+}

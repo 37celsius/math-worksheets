@@ -55,7 +55,7 @@ export const useWorksheetStore = defineStore('worksheet', () => {
       let num1, num2
       const getRandomNumber = (max) => Math.floor(Math.random() * max) + 1
 
-      // Check if problem already exist or not
+      // Create a temporary loop to store numbers and check if problem already exist or not
       while (true) {
         const number1 = getRandomNumber(maxNumber.value)
         const number2 = getRandomNumber(maxNumber.value)

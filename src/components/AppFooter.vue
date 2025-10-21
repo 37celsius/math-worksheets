@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <footer>&copy; {{ currentYear }}</footer>
+  <footer class="wrapper-content">&copy; {{ currentYear }}</footer>
 </template>

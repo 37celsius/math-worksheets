@@ -1,5 +1,22 @@
   @media print {
-    .print-button {
+    .print-button,
+    .wrapper-content.worksheet-setting-style,
+    .header-style {
       display: none;
+    }
+
+    .list-of-problems-style {
+      border: 0 !important;
+    }
+
+    .problems-list {
+      grid-template-columns: repeat(3, 1fr) !important;
+      row-gap: 0.2cm !important;
+      column-gap: 0.8cm !important;
+    }
+
+    .content-number {
+      width: 4rem !important;
+      height: 4rem !important;
     }
   }

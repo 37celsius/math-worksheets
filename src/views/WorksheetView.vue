@@ -13,10 +13,12 @@
 </script>
 
 <template>
-  <AppHeader title="Math worksheet"/>
-  <main>
-    <WorksheetSetting />
-    <ListOfProblems v-if="problems.length > 0" />
-  </main>
-  <AppFooter />
+  <div class="wrapper-window">
+    <AppHeader title="Math worksheet"/>
+    <main class="wrapper-main">
+      <WorksheetSetting />
+      <ListOfProblems v-if="problems.length > 0" />
+    </main>
+    <AppFooter />
+  </div>
 </template>
