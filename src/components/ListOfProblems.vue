@@ -47,6 +47,8 @@
     align-items: center;
     display: flex;
     margin-bottom: 2.4rem;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .problems-list {
