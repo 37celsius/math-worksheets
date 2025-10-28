@@ -1,6 +1,7 @@
 export const PROBLEM_TYPE = {
   ADDITION: 'ADDITION',
   SUBTRACTION: 'SUBTRACTION',
+  MIX: 'MIX',
 }
 
 export const NUMBER_OF_PROBLEMS = 20

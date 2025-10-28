@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <footer class="wrapper-content footer">&copy; {{ currentYear }} &mdash; Made with <a class="footer-link" href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue.js</a></footer>
+  <footer class="wrapper-content footer">&copy; {{ currentYear }} &mdash; Made with <a class="footer-link" href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue.js</a> &mdash; <a class="footer-link" href="https://github.com/37celsius/math-worksheets" target="_blank" rel="noopener noreferrer">Github repository</a></footer>
 </template>
 
 <style scoped>

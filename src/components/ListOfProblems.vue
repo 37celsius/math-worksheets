@@ -20,7 +20,14 @@
     <ul class="problems-list">
       <li class="problems-content" v-for="(problem, index) in problems" :key="index">
         <div class="content-number">{{ problem.num1 }}</div>
-        <div class="content-operator">{{ problem.operator }}</div>
+        <div class="content-operator">
+          <template v-if="problem.operator === '-'">
+            <div class="content-operator--minus"></div>
+          </template>
+          <template v-else>
+            {{ problem.operator }}
+          </template>
+        </div>
         <div class="content-number">{{ problem.num2 }}</div>
         <div class="content-operator">=</div>
         <div class="content-number">&nbsp;</div>
@@ -86,6 +93,16 @@
     font-size: 3.2rem;
     margin-left: 0.8rem;
     margin-right: 0.8rem;
+    width: 1.8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-operator--minus {
+    width: 80%;
+    height: 0.3rem;
+    background-color: var(--black);
+    border-radius: 4px;
   }
 
   @media only screen and (min-width: 768px) {
