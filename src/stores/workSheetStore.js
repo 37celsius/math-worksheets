@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 
 import { createCounterActions } from '@/utils/counter'
 
-import { PROBLEM_TYPE, NUMBER_OF_PROBLEMS, MAX_NUMBER } from '@/constants'
+import { PROBLEM_TYPE, NUMBER_OF_PROBLEMS, MAX_NUMBER, OPERATIONS } from '@/constants'
 
 export const useWorksheetStore = defineStore('worksheet', () => {
   // STATE
@@ -11,20 +11,6 @@ export const useWorksheetStore = defineStore('worksheet', () => {
   const defaultNumberOfProblems = ref(NUMBER_OF_PROBLEMS)
   const maxNumber = ref(MAX_NUMBER)
   const problems = ref([])
-
-  // HELPER: Define available operations for MIX mode
-  const OPERATIONS = [
-    {
-      type: PROBLEM_TYPE.ADDITION,
-      operator: '+',
-      calculate: (num1, num2) => num1 + num2,
-    },
-    {
-      type: PROBLEM_TYPE.SUBTRACTION,
-      operator: '-',
-      calculate: (num1, num2) => num1 - num2,
-    },
-  ]
 
   // HELPER: Get random operation for MIX mode
   const getRandomOperation = () => {

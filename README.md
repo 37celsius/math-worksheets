@@ -1,7 +1,7 @@
 ### NOTE
 
 - Checkin Vue
-- Want to try Vanilla CSS
+- Want to go back to Vanilla CSS
 
 ### TODO
 
