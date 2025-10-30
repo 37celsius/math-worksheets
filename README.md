@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/github/37celsius/math-worksheets/graph/badge.svg?token=5DUCM3QX9V)](https://codecov.io/github/37celsius/math-worksheets)
+
 ### NOTE
 
 - Checkin Vue
