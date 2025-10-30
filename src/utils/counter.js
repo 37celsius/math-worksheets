@@ -4,7 +4,7 @@
  * @param {'increment' | 'decrement'} operation - The action to perform.
  */
 
-const updateCounter = (counterRef, operation) => {
+export const updateCounter = (counterRef, operation) => {
   switch (operation) {
     case 'increment':
       counterRef.value++

@@ -1,7 +1,10 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import { ref } from 'vue'
 import { setActivePinia, createPinia } from 'pinia'
 import { useWorksheetStore } from '@/stores/workSheetStore'
+import { updateCounter } from '@/utils/counter'
 
+const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 import { NUMBER_OF_PROBLEMS, MAX_NUMBER, PROBLEM_TYPE, OPERATIONS } from '@/constants'
 
 describe('useWorksheetStore', () => {
@@ -10,6 +13,10 @@ describe('useWorksheetStore', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     store = useWorksheetStore()
+  })
+
+  afterEach(() => {
+    warnSpy.mockClear()
   })
 
   it('should initialize with default values', () => {
@@ -132,5 +139,18 @@ describe('useWorksheetStore', () => {
     store.decrementMaxNumber()
 
     expect(store.maxNumber).toBe(MAX_NUMBER - 1)
+  })
+
+  it('should log a warning for an unsupported operation', () => {
+    const counter = ref(10)
+    const invalidOperation = 'asdf'
+
+    updateCounter(MAX_NUMBER, invalidOperation)
+
+    expect(counter.value).toBe(10)
+    expect(warnSpy).toHaveBeenCalledTimes(1)
+    expect(warnSpy).toHaveBeenCalledWith(
+      `updateCounter received an unsupported operation: "${invalidOperation}"`,
+    )
   })
 })
